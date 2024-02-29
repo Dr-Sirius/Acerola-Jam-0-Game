@@ -9,3 +9,7 @@ script = ExtResource("1_j4s2q")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_5ae6g")
+
+[node name="SwitchTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+one_shot = true
