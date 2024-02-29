@@ -6,9 +6,11 @@ const JUMP_VELOCITY = 4
 
 @onready var cam = %Cam
 
+@export var check_point: Vector3
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var is_captured = false
+
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -51,3 +53,8 @@ func _physics_process(delta):
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
+
+
+func _on_area_body_entered(body):
+	if body.has_node("Kill"):
+		global_position = check_point
