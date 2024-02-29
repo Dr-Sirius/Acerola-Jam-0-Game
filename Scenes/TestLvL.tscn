@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://c5nny4wffv8ee"]
+[gd_scene load_steps=8 format=3 uid="uid://c5nny4wffv8ee"]
 
 [ext_resource type="PackedScene" uid="uid://4wf6dp5duoqt" path="res://Assests/Blocks/BlackBlock.tscn" id="1_qx6qb"]
 [ext_resource type="PackedScene" uid="uid://typ5uys47m6m" path="res://Assests/Blocks/BlueBlock.tscn" id="2_k41hk"]
 [ext_resource type="PackedScene" uid="uid://bdy4vbxxar34d" path="res://Scenes/player.tscn" id="3_27q0p"]
+[ext_resource type="PackedScene" uid="uid://b4oa5mpqktbyo" path="res://Scenes/switch.tscn" id="4_ol8c2"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rvsng"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -45,3 +46,7 @@ size = Vector3(1, 0.235352, 1)
 
 [node name="Player" parent="." instance=ExtResource("3_27q0p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.45737, 1.90366, 1.61664)
+
+[node name="Switch" parent="." node_paths=PackedStringArray("swap_obj") instance=ExtResource("4_ol8c2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.59151, -4.95237)
+swap_obj = NodePath("../Player")
