@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://jmi03gpsuebn"]
+
+[ext_resource type="Texture2D" uid="uid://dok1ra3ufkyl2" path="res://Assests/Textures/checker_yellow_512x512.png" id="1_8xtsi"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_toidm"]
+albedo_texture = ExtResource("1_8xtsi")
+rim = 0.6
+rim_tint = 1.0
+ao_enabled = true
+uv1_triplanar = true
+
+[node name="YellowBlock" type="CSGBox3D"]
+use_collision = true
+material = SubResource("StandardMaterial3D_toidm")

@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://c5nny4wffv8ee"]
+
+[ext_resource type="PackedScene" uid="uid://4wf6dp5duoqt" path="res://Assests/Blocks/BlackBlock.tscn" id="1_qx6qb"]
+[ext_resource type="PackedScene" uid="uid://typ5uys47m6m" path="res://Assests/Blocks/BlueBlock.tscn" id="2_k41hk"]
+[ext_resource type="PackedScene" uid="uid://bdy4vbxxar34d" path="res://Scenes/player.tscn" id="3_27q0p"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rvsng"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_gt451"]
+sky_material = SubResource("ProceduralSkyMaterial_rvsng")
+
+[sub_resource type="Environment" id="Environment_tplih"]
+background_mode = 2
+sky = SubResource("Sky_gt451")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="Node3D" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_tplih")
+
+[node name="BlackBlock" parent="." instance=ExtResource("1_qx6qb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00593472, 0.249253, 0.0861557)
+use_collision = true
+size = Vector3(16.0291, 0.215332, 16.1699)
+
+[node name="BlueBlock" parent="." instance=ExtResource("2_k41hk")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.0202239, 0.595804, -0.0248312)
+size = Vector3(1, 0.235352, 1)
+
+[node name="BlueBlock2" parent="." instance=ExtResource("2_k41hk")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 2.47696, 1.0571, -0.0248312)
+size = Vector3(1, 0.235352, 1)
+
+[node name="BlueBlock3" parent="." instance=ExtResource("2_k41hk")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 5.06068, 1.4239, -0.0248312)
+size = Vector3(1, 0.235352, 1)
+
+[node name="Player" parent="." instance=ExtResource("3_27q0p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.45737, 1.90366, 1.61664)

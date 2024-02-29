@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cro11tth0nrkq"]
+
+[ext_resource type="Texture2D" uid="uid://cdm2certwr32h" path="res://Assests/Textures/checker_red_512x512.png" id="1_8o6dt"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_toidm"]
+albedo_texture = ExtResource("1_8o6dt")
+rim = 0.6
+rim_tint = 1.0
+ao_enabled = true
+uv1_triplanar = true
+
+[node name="RedBlock" type="CSGBox3D"]
+use_collision = true
+material = SubResource("StandardMaterial3D_toidm")

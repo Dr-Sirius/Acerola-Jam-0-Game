@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://4wf6dp5duoqt"]
+
+[ext_resource type="Texture2D" uid="uid://do624e6mckwoh" path="res://Assests/Textures/checker_black_512x512.png" id="1_kbqhb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v3ctr"]
+albedo_texture = ExtResource("1_kbqhb")
+uv1_triplanar = true
+
+[node name="BlackBlock" type="CSGBox3D"]
+material = SubResource("StandardMaterial3D_v3ctr")

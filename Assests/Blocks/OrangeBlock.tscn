@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://c18c0lksc3ri3"]
+
+[ext_resource type="Texture2D" uid="uid://d3aj84tlf5482" path="res://Assests/Textures/checker_orange_512x512.png" id="1_dcyd0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_toidm"]
+albedo_texture = ExtResource("1_dcyd0")
+rim = 0.6
+rim_tint = 1.0
+ao_enabled = true
+uv1_triplanar = true
+
+[node name="OrangeBlock" type="CSGBox3D"]
+use_collision = true
+material = SubResource("StandardMaterial3D_toidm")
