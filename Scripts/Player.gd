@@ -1,16 +1,18 @@
 extends CharacterBody3D
 
+signal dead
 
 const SPEED = 3.5
 const JUMP_VELOCITY = 4
 
 @onready var cam = %Cam
 
+
 @export var check_point: Vector3
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var is_captured = false
-
+var direction
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -44,7 +46,7 @@ func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir = Input.get_vector("left", "right", "forwared", "backward")
-	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
@@ -58,3 +60,10 @@ func _physics_process(delta):
 func _on_area_body_entered(body):
 	if body.has_node("Kill"):
 		global_position = check_point
+		emit_signal("dead")
+
+
+func _on_area_area_entered(area):
+	if area.has_node("Kill"):
+		global_position = check_point
+		emit_signal("dead")
