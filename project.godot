@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 project/assembly_name="Acerola Jam 0 Game"
 
+[filesystem]
+
+import/fbx/enabled=false
+
 [input]
 
 forwared={

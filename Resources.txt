@@ -1,0 +1,3 @@
+Character Arm model - SWAT by Quaternius (https://poly.pizza/m/Btfn3G5Xv4)
+Ancient Slab Textures - (PolyHaven https://polyhaven.com/a/slab_tiles)
+Grid Textures - PiCode (https://godotengine.org/asset-library/asset/2480)
